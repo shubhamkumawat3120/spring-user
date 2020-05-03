@@ -12,15 +12,28 @@ eureka:
   instance:
     hostname: localhost      
   
+#Logging configuration
+logging:
+  level:
+    root: INFO
+    com.scg.service: TRACE
+    org.springframework.web: INFO
+    org.springframework.web.HttpLogging: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG  
   
   
-  
+    
+#Resource server configuration    
 spring:
   application:
     name: lern-user  
-    
-    
-    
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: accounts.google.com
+          jwk-set-uri: https://www.googleapis.com/oauth2/v1/certs
     
     
     
